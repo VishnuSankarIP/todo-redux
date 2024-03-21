@@ -1,4 +1,3 @@
-
 import { createSlice } from "@reduxjs/toolkit";
 
 const addSlice = createSlice({
@@ -12,15 +11,11 @@ const addSlice = createSlice({
             };
             state.todoList.push(newTodo); 
         },
-        deleteTodoItem:(state,action)=>{
-          
-            return state.todoList.filter(item=>item.id!=action.payload).id
+        deleteTodoItem: (state, action) => {
+            state.todoList = state.todoList.filter(todo => todo.id !== action.payload);
         }
-
     }
 });
 
-export const { addTodoItem ,deleteTodoItem} = addSlice.actions;
+export const { addTodoItem, deleteTodoItem } = addSlice.actions;
 export default addSlice.reducer;
-
-
